@@ -1,6 +1,7 @@
 package cafe.jjdev.mall.controller;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -20,9 +21,20 @@ public class AddMember extends HttpServlet{
 	
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		System.out.println("doPost¸Þ¼­µå AddMember.java");
+		String id = request.getParameter("id");
+		String pw = request.getParameter("pw");
+		System.out.println(id);
+		System.out.println(pw);
 		Member member = new Member();
 		memberDao = new MemberDao();
-		int row = memberDao.insertMember(member);
+		member.setId(id);
+		member.setPw(pw);
+		try {
+			memberDao.insertMember(member);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 		
 	}
 }
