@@ -10,10 +10,10 @@
 <body>
 	<c:if test="${loginMember.id != null}">
 		${loginMember.id}님 반갑습니다.
-		<a href="">로그아웃</a>
+		<a href="/mall/logout">로그아웃</a>
 	</c:if>
 	<c:if test="${loginMember.id == null}">
-		<a href="">로그인</a>
+		<a href="/mall/login">로그인</a>
 	</c:if>
 </body>
 </html>
