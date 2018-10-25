@@ -1,9 +1,12 @@
 1. 메인페이지 
-ⓒIndexController.doGet -> ⓥindex.jsp
+(C)IndexController.doGet -> (V)index.jsp
+2. 회원가입 폼
+(C)AddMember.doGet -> (V)addMember.jsp
+3. 회원가입 액션
+(C)AddMember.doPost -> (M)MemberDao.insertMember -> re:(V)login
 
-2. 회원가입폼
-ⓒAddMember.doGet -> ⓥaddMember.jsp
-
-3. 회원가입액션
-ⓒAddMember.doPost -> ⓜMemberDao.insertMember -> re:ⓒlogin
-
+# 10/25
+4. 로그인 폼
+(C)Login.doGet -> (V)login.jsp
+5. 로그인 액션
+(C)Login.doGet -> (M)MemberDao.login() -> success:(V)index / fail:(V)login

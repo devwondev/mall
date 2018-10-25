@@ -8,20 +8,12 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<%-- Hello <%= request.getAttribute("model")%> --%>
-	<br>
-	Hello ${model}
-	<br>
-	<!--  if(){} -->
-	<c:if test="${member.level == 0 }">
-		°í°´
+	<c:if test="${loginMember != null}">
+		${loginMember}´Ô ¹Ý°©½À´Ï´Ù.
+		<a href="">·Î±×¾Æ¿ô</a>
 	</c:if>
-	<c:if test="${member.level == 1 }">
-		°ü¸®ÀÚ
-	</c:if>	
-	<!--  for(String s : arr) -->
-	<c:forEach var="str" items="${list}">
-		<div>${str}</div>
-	</c:forEach>
+	<c:if test="${loginMember == null}">
+		<a href="">·Î±×ÀÎ</a>
+	</c:if>
 </body>
 </html>

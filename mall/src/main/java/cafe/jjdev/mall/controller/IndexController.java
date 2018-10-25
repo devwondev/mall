@@ -23,14 +23,10 @@ public class IndexController extends HttpServlet {
 		
 		request.setAttribute("model", model);	// viewÂÊ¿¡¼­ Ç¥Çö½Ä ${model}À» º¸¿©ÁÜ
 		Member member = new Member();
-		member.setNo(1); 
-		member.setId("guest"); 
-		member.setLevel(0);
+		member.setNo(1); member.setId("guest"); member.setLevel(0);
 		request.setAttribute("member", member);	// ${member.id}
 		ArrayList<String> list = new ArrayList<String>();
-		list.add("½ÂÁ¤"); 
-		list.add("½Â¿ì"); 
-		list.add("Âù¿ì");
+		list.add("½ÂÁ¤"); list.add("½Â¿ì"); list.add("Âù¿ì");
 		request.setAttribute("list", list);	// ${list}
 		
 		
