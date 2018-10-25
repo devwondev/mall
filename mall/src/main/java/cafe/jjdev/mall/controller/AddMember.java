@@ -12,12 +12,12 @@ import cafe.jjdev.mall.service.MemberDao;
 @WebServlet("/addMember")
 public class AddMember extends HttpServlet{
 	MemberDao memberDao;
-	// È¸¿ø°¡ÀÔ Æû
+	// íšŒì›ê°€ì…í¼
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.getRequestDispatcher("/WEB-INF/jsp/addMember.jsp").forward(request, response);
 	}
-	// È¸¿ø°¡ÀÔ ¾×¼Ç
+	// íšŒì›ê°€ì…ì•¡ì…˜
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String id = request.getParameter("id");

@@ -1,19 +1,19 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR" pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page isELIgnored="false" %>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
 	<c:if test="${loginMember.id != null}">
-		${loginMember.id}´Ô ¹İ°©½À´Ï´Ù.
-		<a href="/mall/logout">·Î±×¾Æ¿ô</a>
+		${loginMember.id}ë‹˜ ë°˜ê°‘ìŠµë‹ˆë‹¤.
+		<a href="/mall/logout">ë¡œê·¸ì•„ì›ƒ</a>
 	</c:if>
 	<c:if test="${loginMember.id == null}">
-		<a href="/mall/login">·Î±×ÀÎ</a>
+		<a href="/mall/login">ë¡œê·¸ì¸</a>
 	</c:if>
 </body>
 </html>

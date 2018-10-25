@@ -17,21 +17,21 @@ public class IndexController extends HttpServlet {
 		System.out.println("IndexController doGet");
 		// 1. router : @WebServlet("/index")
 		
-		// 2. modelÈ£Ãâ : DAO¸ğµ¨»ı¼º
+		// 2. model : DAOëª¨ë¸ìƒì„±
 		String model = "jjdev";
 		// view rend...(template)
 		
-		request.setAttribute("model", model);	// viewÂÊ¿¡¼­ Ç¥Çö½Ä ${model}À» º¸¿©ÁÜ
+		request.setAttribute("model", model);	
 		Member member = new Member();
 		member.setNo(1); member.setId("guest"); member.setLevel(0);
 		request.setAttribute("member", member);	// ${member.id}
 		ArrayList<String> list = new ArrayList<String>();
-		list.add("½ÂÁ¤"); list.add("½Â¿ì"); list.add("Âù¿ì");
+		list.add("ìŠ¹ì •"); list.add("ìŠ¹ìš°"); list.add("ìŠ¹ì •");
 		request.setAttribute("list", list);	// ${list}
 		
 		
-		// 4. Forward(request, response) to WEB-INF/jsp/index.jsp	// Forward:"³»°¡ request, response ´Ù Ã³¸®ÇÒ ¼ö ÀÖ´Âµ¥ ±×³É index ´Ï°¡ ÇØ¶ó"
+		// 4. Forward(request, response) to WEB-INF/jsp/index.jsp	
 		
-		request.getRequestDispatcher("WEB-INF/jsp/index.jsp").forward(request,  response); // request¾È¿¡ ÀÖ´Â dispatcher°´Ã¼¸¦ ²¨³»¸é¼­ ¾îµğ·Î Æ÷¿öµùÇÒ°ÇÁö ¸Å°³º¯¼ö·Î ¾Ë·ÁÁÜ	
+		request.getRequestDispatcher("WEB-INF/jsp/index.jsp").forward(request,  response); 	
 	}
 }

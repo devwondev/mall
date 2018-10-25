@@ -16,16 +16,16 @@ import cafe.jjdev.mall.service.MemberDao;
 @WebServlet("/login")
 public class Login extends HttpServlet {
 	private MemberDao memberDao;
-	// ·Î±×ÀÎ Æû
+	// ë¡œê·¸ì¸ í¼
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		if(request.getSession().getAttribute("loginMember") == null) {
 			request.getRequestDispatcher("/WEB-INF/jsp/login.jsp").forward(request, response);
 		} else {
-			System.out.println("·Î±×ÀÎ ÁßÀÔ´Ï´Ù...");
+			System.out.println("ë¡œê·¸ì¸ì¤‘...");
 			response.sendRedirect("/mall/index");
 		}
 	}
-	// ·Î±×ÀÎ ¾×¼Ç
+	// ë¡œê·¸ì¸ ì•¡ì…˜
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String id = request.getParameter("id");
 		String pw = request.getParameter("pw");
@@ -34,7 +34,7 @@ public class Login extends HttpServlet {
 		member.setId(id);
 		member.setPw(pw);
 		try {
-			Member m = MemberDao.loginMember(member);
+			Member m = memberDao.loginMember(member);
 			if(m.isLogin()==true) {
 				HttpSession session = request.getSession();
 				session.setAttribute("loginMember", member);

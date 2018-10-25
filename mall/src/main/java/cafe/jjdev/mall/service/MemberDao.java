@@ -6,7 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 public class MemberDao {
-	// µå¶óÀÌ¹ö ·Îµù °øÅë ¸Þ¼­µåÈ­
+	// ï¿½ï¿½ï¿½ï¿½Ì¹ï¿½ ï¿½Îµï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½È­
 	public static Connection getConnection() throws Exception {
         Class.forName("com.mysql.jdbc.Driver");
         String dbUrl = "jdbc:mysql://127.0.0.1:3306/jjdev?useUnicode=true&characterEncoding=euckr";
@@ -16,9 +16,9 @@ public class MemberDao {
         System.out.println(connection+"<--connection");
         return connection;
     }
-	// È¸¿ø°¡ÀÔÃ³¸®
+	// È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã³ï¿½ï¿½
 	public void insertMember(Member member) throws Exception{
-		System.out.println("insertMember¸Þ¼­µå MemberDao.java");
+		System.out.println("insertMember MemberDao.java");
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
 		connection = getConnection();
@@ -30,8 +30,8 @@ public class MemberDao {
 		preparedStatement.close();
 		connection.close();
 	}
-	public static Member loginMember(Member member) throws Exception {
-		System.out.println("loginMember¸Þ¼­µå MemberDao.java");
+	public Member loginMember(Member member) throws Exception {
+		System.out.println("loginMember MemberDao.java");
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
 		ResultSet resultSet = null;
