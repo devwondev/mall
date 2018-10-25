@@ -20,14 +20,20 @@ public class AddMember extends HttpServlet{
 	// 회원가입 액션
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		Member member = new Member();
-		memberDao = new MemberDao();
-		int row = memberDao.insertMember(member);
-		response.sendRedirect(request.getContextPath() + "/login");
-		
 		String id = request.getParameter("id");
 		String pw = request.getParameter("pw");
-		System.out.println(id + "<-- id");
-		System.out.println(pw + "<-- pw");
+		System.out.println(id+"<--id");
+		System.out.println(pw+"<--pw");
+		Member member = new Member();
+		memberDao = new MemberDao();
+		member.setId(id);
+		member.setPw(pw);
+		try {
+			memberDao.insertMember(member);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		response.sendRedirect(request.getContextPath() + "/login");
+		
 	}
 }

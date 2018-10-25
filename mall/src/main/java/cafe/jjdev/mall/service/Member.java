@@ -5,6 +5,13 @@ public class Member {
 	private String id;
 	private String pw;
 	private int level;
+	private boolean isLogin;
+	public boolean isLogin() {
+		return isLogin;
+	}
+	public void setLogin(boolean isLogin) {
+		this.isLogin = isLogin;
+	}
 	public int getNo() {
 		return no;
 	}

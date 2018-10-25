@@ -8,11 +8,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<c:if test="${loginMember != null}">
-		${loginMember}´Ô ¹Ý°©½À´Ï´Ù.
+	<c:if test="${loginMember.id != null}">
+		${loginMember.id}´Ô ¹Ý°©½À´Ï´Ù.
 		<a href="">·Î±×¾Æ¿ô</a>
 	</c:if>
-	<c:if test="${loginMember == null}">
+	<c:if test="${loginMember.id == null}">
 		<a href="">·Î±×ÀÎ</a>
 	</c:if>
 </body>
