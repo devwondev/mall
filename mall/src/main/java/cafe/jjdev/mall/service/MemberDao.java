@@ -6,17 +6,17 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 public class MemberDao {
-	// ����̹� �ε� ���� �޼���ȭ
+	// 드라이버 로딩 공통 메서드화
 	public static Connection getConnection() throws Exception {
         Class.forName("com.mysql.jdbc.Driver");
-        String dbUrl = "jdbc:mysql://127.0.0.1:3306/jjdev?useUnicode=true&characterEncoding=euckr";
+        String dbUrl = "jdbc:mysql://127.0.0.1:3306/mall?useUnicode=true&characterEncoding=utf-8";
         String dbUser = "root";
         String dbPassword = "java0000";
         Connection connection = DriverManager.getConnection(dbUrl, dbUser, dbPassword);
         System.out.println(connection+"<--connection");
         return connection;
     }
-	// ȸ������ó��
+	// 회원가입처리 메서드
 	public void insertMember(Member member) throws Exception{
 		System.out.println("insertMember MemberDao.java");
 		Connection connection = null;
@@ -30,6 +30,7 @@ public class MemberDao {
 		preparedStatement.close();
 		connection.close();
 	}
+	// 로그인처리 메서드
 	public Member loginMember(Member member) throws Exception {
 		System.out.println("loginMember MemberDao.java");
 		Connection connection = null;
@@ -45,6 +46,12 @@ public class MemberDao {
 		}else {
 			member.setLogin(false);
 		}
+		preparedStatement.close();
+		connection.close();
 		return member;
+	}
+	// 내 정보 보기(id중복없이)
+	public Member selectMember(String id) {
+		return null;
 	}
 }
