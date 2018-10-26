@@ -19,12 +19,17 @@ public class GetMember extends HttpServlet {
 		// 한명의 정보 가져옴
 		HttpSession session = request.getSession();
 		if(session.getAttribute("loginMember")==null) {
-			// redirect
+			response.sendRedirect("/mall/login");
 		}else {
-			Member member = memberDao.selectMember("");
-			request.setAttribute("memember", member);
-			//forward
+			try {
+			
+				Member member;
+				//member = memberDao.selectMember();
+				//request.setAttribute("member", member);
+				//forward
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 		}
 	}
-
 }

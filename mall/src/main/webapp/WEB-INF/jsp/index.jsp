@@ -10,6 +10,7 @@
 <body>
 	<c:if test="${loginMember.id != null}">
 		${loginMember.id}님 반갑습니다.
+		<a href="/mall/getMember">내 정보</a>
 		<a href="/mall/logout">로그아웃</a>
 	</c:if>
 	<c:if test="${loginMember.id == null}">

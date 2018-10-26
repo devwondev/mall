@@ -7,14 +7,20 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import cafe.jjdev.mall.service.Member;
+import cafe.jjdev.mall.service.MemberDao;
+
 @WebServlet("/ModifyMember")
 public class ModifyMember extends HttpServlet {
     
 	// 수정 폼
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		MemberDao memberDao;
 		// 로그인 확인
 		// MemberDao.selectMember()
 		// forward
+		
+		
 	}
 
 	// 수정 액션

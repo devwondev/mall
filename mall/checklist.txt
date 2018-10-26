@@ -1,12 +1,14 @@
-1. ¸ŞÀÎÆäÀÌÁö 
+1. ë©”ì¸í˜ì´ì§€
 (C)IndexController.doGet -> (V)index.jsp
-2. È¸¿ø°¡ÀÔ Æû
+2. íšŒì›ê°€ì… í¼
 (C)AddMember.doGet -> (V)addMember.jsp
-3. È¸¿ø°¡ÀÔ ¾×¼Ç
+3. íšŒì›ê°€ì… ì•¡ì…˜
 (C)AddMember.doPost -> (M)MemberDao.insertMember -> re:(V)login
 
 # 10/25
-4. ·Î±×ÀÎ Æû
+4. ë¡œê·¸ì¸ í¼
 (C)Login.doGet -> (V)login.jsp
-5. ·Î±×ÀÎ ¾×¼Ç
+5. ë¡œê·¸ì¸ ì•¡ì…˜
 (C)Login.doGet -> (M)MemberDao.login() -> success:(V)index / fail:(V)login
+6. íšŒì›ì •ë³´ë³´ê¸°
+7. íšŒì›ì •ë³´ìˆ˜ì •
